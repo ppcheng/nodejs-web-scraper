@@ -8,9 +8,13 @@
   },
   "scripts": {},
   "devDependencies": {
-    "babel-eslint": "^7.2.1",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-plugin-import": "^2.2.0"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
   }
 }
