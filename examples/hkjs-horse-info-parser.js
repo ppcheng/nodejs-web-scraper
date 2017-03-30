@@ -1,4 +1,5 @@
 const fs      = require('fs');
+const url     = require('url');
 const cheerio = require('cheerio');
 
 function getHorseAttr(text, html) {
@@ -30,9 +31,13 @@ function save2xls(headers, records, filename) {
 
   writeStream.write(`${headers.join(',')}\n`);
 
-  records.forEach((elem) => {
-    writeStream.write(`${elem.join(',')}\n`);
-  });
+  for (let i = 0; i <= records.length; i++) {
+    if (i === records.length) {
+      writeStream.end();
+    } else {
+      writeStream.write(`${records[i].join(',')}\n`);
+    }
+  }
 
   writeStream.on('finish', () => {
     console.log('data has been saved successfully');
@@ -40,29 +45,42 @@ function save2xls(headers, records, filename) {
   });
 }
 
+function parseLink2Id(link) {
+  return url.parse(link).pathname.split('/').slice(-1).pop();
+}
+
 fs.readFile('example.html', (err, htmlString) => {
   if (err) return console.error(err);
 
   const headers = [];
+  const records = [];
   const $       = cheerio.load(htmlString);
 
-  const records   = [];
+  const basicInfo = [
+    '出生地 / 馬齡',
+    '練馬師',
+    '毛色 / 性別',
+    '馬主', '進口類別',
+    '現時評分',
+    '季初評分',
+    '今季獎金',
+    '總獎金',
+    '冠-亞-季-總出賽次數*',
+    '最近十個賽馬日出賽場數'
+  ];
 
   const title = $('title').text().split('-')[0].trim();
   console.log(`馬名: ${title}`);
 
-  const birth                     = getHorseAttr('出生地 / 馬齡', $);
-  const trainer                   = getHorseAttr('練馬師', $);
-  const sex                       = getHorseAttr('毛色 / 性別', $);
-  const owner                     = getHorseAttr('馬主', $);
-  const type                      = getHorseAttr('進口類別', $);
-  const currentRating             = getHorseAttr('現時評分', $);
-  const startofSeasonRating       = getHorseAttr('季初評分', $);
-  const seasonStakes              = getHorseAttr('今季獎金*', $);
-  const totalStakes               = getHorseAttr('總獎金*', $);
-  const stats                     = getHorseAttr('冠-亞-季-總出賽次數*', $);
-  const numOver10PastRaceMeetings = getHorseAttr('最近十個賽馬日出賽場數', $);
+  const horseId = parseLink2Id($('font:contains("賽績易")').parent().attr('href'));
+  console.log(`ID: ${horseId}`);
 
+  basicInfo.forEach((item) => {
+    getHorseAttr(item, $);
+  });
+
+  headers.push('烙號');
+  process.stdout.write('烙號 ');
   $('tr > td[class="hsubheader"]').each((i, elem) => {
     const value = $(elem).text().trim();
     headers.push(value);
@@ -75,6 +93,8 @@ fs.readFile('example.html', (err, htmlString) => {
 
     const row = [];
 
+    row.push(horseId);
+    process.stdout.write(`${horseId} `);
     for (let index = 0; index < numColumns; index++) {
       const line = $(elem).children('td').eq(index).text();
       if (line !== '') {
@@ -87,7 +107,7 @@ fs.readFile('example.html', (err, htmlString) => {
     process.stdout.write('\n');
   });
 
-  save2xls(headers, records, 'example.csv');
+  save2xls(headers, records, `${title}.csv`);
 
   return 0;
 });
