@@ -26,7 +26,7 @@ function getHorseAttr(text, html) {
   return result;
 }
 
-function save2xls(headers, records, filename) {
+function save2csv(headers, records, filename) {
   const writeStream = fs.createWriteStream(filename);
 
   writeStream.write(`${headers.join(',')}\n`);
@@ -107,7 +107,7 @@ fs.readFile('example.html', (err, htmlString) => {
     process.stdout.write('\n');
   });
 
-  save2xls(headers, records, `${title}.csv`);
+  save2csv(headers, records, `${title}.csv`);
 
   return 0;
 });
