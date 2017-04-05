@@ -1,0 +1,1104 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+<Script language = "javascript">
+	var Ewinlink = "http://bet.hkjc.com";
+	var hasMenu = true;
+</script>
+<link rel="stylesheet" type="text/css" href="../style_utf8.css">
+
+<script type="text/javascript" language="javascript" src="/chinese/include/header_all.js"></script>
+
+<script language="javascript" src="../include/neo02_menu_array_racing2.js" type="text/javascript"></script>
+<script language=JavaScript src="../include/neo02_menu_main_racing.js" type="text/javascript"></script>
+<table width="760" border="0" cellpadding="0" cellspacing="0"><tr><td width="5%">&nbsp;&nbsp;</td><td>
+
+
+</HEAD>
+
+<BODY>
+
+
+
+
+
+<script language="JavaScript" type="text/JavaScript">
+//Accenture start - insert new functions
+function getUrl() 										//Function to get the URL of the video link
+{
+	var url = document.getElementById('url').value; 		//The value of the URL is assigned to the element ID 'url'
+    return url; 											//Returns the url value
+}														//End of getUrl()
+
+function openvideo() 											//Function to open video in new popup window
+{                 		
+    var url = getUrl();											//Get the URL value from the function getURL()
+    
+    if (navigator.appName != "Microsoft Internet Explorer") 	//Check user browser, if not Internet Explorer then use Silverlight player
+    	{          
+          var tag =
+          	'<object data="data:application/x-silverlight-2," type="application/x-silverlight-2" height="390px" id="MediaPlayer" style="margin: 0px; width: 420px" >' +
+            '\n  <param name="source" value="http://www.hkjc.com/common/util/OVP.xap"/>' +
+            '\n 	  <param name="enableHtmlAccess" value="true" />'+
+            '\n  <param name="minRuntimeVersion" value="2.0.30923.0" />' +
+            '\n  <param name="onerror" value="onSilverlightError" />' +
+            '\n  <param name="background" value="black" />' +
+            '\n  <param name="MaxFrameRate" value="30" />' +
+            '\n  <a href="http://go.microsoft.com/fwlink/?LinkID=124807" style="text-decoration: none;">' +
+            '\n  <img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style: none"/></a>' +
+            '\n  <param name="initparams" value="showstatistics=false, showlogviewer=false, autoplay=true, muted=false, playlistoverlay=true, ' +
+            '\n  theme=http://www.hkjc.com/common/util/theme.xaml, stretchmode=Fit, stretchmodefullscreen=Fit, type=SupportPlayer, ' +
+            '\n  LogViewer.Transparent=false, mediasource=' + url + '" />' +
+            '\n  </object>';
+            
+            var generator=window.open('','','height=410,width=430,resizable=false,scrollbars=false,toolbar=false,status=false,location=false');	//open popup with the related player
+    				generator.document.write('<html><head><title>Video</title>');                                    
+    				generator.document.write('</head><body>');                                                       
+    				generator.document.write('<div id="container" rowspan="4" bgcolor="#EEEEEE" class="style4" style=" padding: 0px; width: 442px">' + tag +	'</div>');                                                                
+    				generator.document.write('</body></html>');
+         }
+           else 												
+           		{
+                  
+									
+						window.location.href=url;
+				}	
+  	//generator.window.close
+  	
+}															//End of openvideo() function
+//Accenture End - insert new functions
+</script>
+
+<!--include file="horse_utf8.inc" /-->
+<HTML>
+
+<HEAD>
+<title> &#30408;&#36914; - 馬匹資料 - 賽馬資訊 - 香港賽馬會 </title>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<script language="javascript" src="akamai.js" ></script>
+<script language="javascript">
+function OpenWin(tjpg) {		
+	a = window.open('horse_img.asp?filename=' + tjpg, 'ShowHorsePic', 'top=200 screenX=200, left=300 screenY=300, width=370,height=330,resizable=0,scrollbar=1,menubar=0,toolbar=0')
+	if (window.a)
+		a.focus()
+}
+function submit_form(other_horse) {		
+	other_horse = document.SelHorse.SIRE[other_horse].value
+	location.href = "horse.asp?HorseNo=" + other_horse
+	
+}
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; 
+  document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"?HorseNo="+args[i+2]+"&refSeason="+args[i+3] + "'");
+}		
+
+<!-- Q307 Modification
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+
+
+</script>
+<style type="text/css">
+<!--
+.icon_margin {	padding: 8px;
+	border: 1px solid #99CC66;
+	margin-top: 5px;
+}
+-->
+.profile .cols table a.blueBtn {color:#254FA1; padding:2px 5px 0 8px;}
+a.blueBtn {background:transparent url(../images/racing/btn_l.gif) no-repeat 0 0; font-size=11; display:inline-block; color:#FFF !important; float:left; font-weight:bold; height:21px; margin-right:3px; padding:2px 10px 0 13px; position:relative;}
+a.blueBtn span {background:url(../images/racing/btn_r.gif) no-repeat right top; font-size=11; display:inline-block; height:21px; position:absolute; right:-3px; top:0; width:3px;}
+a.grayBtn {background:transparent url(../images/racing/btn_l_gray.gif) no-repeat 0 0; font-size=11; display:inline-block; color:#666 !important; float:left; font-weight:bold; height:21px; margin-right:3px; padding:2px 10px 0 13px; position:relative;}
+a.grayBtn span {background:url(../images/racing/btn_r_gray.gif) no-repeat right top; font-size=11; display:inline-block; height:21px; position:absolute; right:0px; top:0; width:3px;}
+</style>
+
+</HEAD>
+
+<form name='ownerHorsePostForm' method='post' action='ownersearch.asp?horseowner=%26%2338283%3B%26%2324515%3B%26%2321916%3B%26%2324709%3B%26%2322296%3B%26%2339636%3B&ensearch=1&enhorseowner=Joyful Syndicate'>
+<input type='hidden' name='ownerNameChiOri' value='開心喜悅團體'/>
+</form>
+<form name='SelHorse' method=get>
+	<table width="760">
+	    <tr>
+	      <td><img src="images/header/title_horses.gif" border="0"></td>
+	    </tr>
+	</table>
+<table width="760" border="0">
+  <tr>
+	<td colspan='2'>
+		<a href="http://racing.hkjc.com/racing/info/horse/smartform/chinese/V283" class="grayBtn"><font size="2">賽績易</font><span></span></a>
+		<a href="#" class="blueBtn"><font size="2">舊版馬匹資料</font><span></span></a>
+	</td>
+  </tr>
+  <tr>
+    <td width="252" valign=top><a name="htop"></a> 
+      <table width="252" border="0">
+        <tr> 
+          <td valign="top" width="243"> 
+            <table width="100%" border="0" cellspacing="3">
+              <tr> 
+                <td class=subsubheader colspan="3"><font class=title_text>&#30408;&#36914;&nbsp;(V283)</font></td>
+              </tr>
+              
+              <tr>
+                <td rowspan="5" valign="top"><table cellpadding="0" cellspacing="0" ID="Table3">
+					<tr><td><a href="javascript: OpenWin('V283_l.jpg')"><img src="../../images/Horse/../../images/horse/V283_s.jpg" onerror="this.src='../images/space.gif';" width="105" height="90" border="0"></a></td></tr>
+                 </table>
+				<table width="105" cellpadding="0" cellspacing="0" class="icon_margin" ID="Table4">
+					<tr><td height="21" align="center" bgcolor="#EAEAEA"><img src="../../images/RaceColor/../../images/RaceColor/V283.gif" onerror="this.src='../images/space.gif';" width="30" height="38"></td></tr>
+                 </table></td>
+                <td valign="middle" class=table_text><li class=table_text></li></td>
+                <td class=table_text><a href="Horse.asp?HorseNo=V283" class=table_text>往績紀錄</a></td>
+              </tr>
+              <tr> 
+				<td valign="middle" class=table_text><li class=table_text></li></td>
+                <td><a href="RatingResultWeight.asp?HorseNo=V283" class=table_text>馬匹評分/體重/名次</a></td>
+              </tr>
+              <tr> 
+                <td valign="middle" class=table_text><li class=table_text></li></td>
+                <td><a href="SummaryRunRec.asp?HorseNo=V283" class=table_text>所跑途程賽績紀錄</a></td>
+              </tr>
+              <tr> 
+				<td valign="middle" class=table_text><li class=table_text></li></td>
+                <td><a href="Track_Result.asp?txtHorse_BrandNo=V283" class=table_text>晨操紀錄</a></td>
+              </tr>
+              <tr> 
+				<td valign="middle" class=table_text><li class=table_text></li></td>
+		        <td><a href="ove_horse.asp?HorseNo=V283" class=table_text>傷患紀錄</a></td>
+              </tr>
+			<tr><td class=table_text></td><td valign="middle" class=table_text><li class=table_text></li></td><td><a href="../racinginfo/newhorse.asp?racedate=20160612&raceNo=1&brandNo=V283" class=table_text>血統簡評</a></td></tr>
+              <tr> 
+				<td class=table_text>　</td>
+				<td valign="middle" class=table_text><li class=table_text></li></td>
+                <td><a href="SelectHorse.asp" class=table_text>其他馬匹</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td width="498" valign="top"> 
+      
+<script language='javascript'>
+function OpenPopWinScroll(ps_Link, pv_Width, pv_Height, ps_Win)
+    {
+        var pv_Left=20;
+        var pv_Top=20;
+        var ls_options = "status=no,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,scrollbars=yes,left=" + pv_Left + ",top=" + pv_Top + ",width=" + pv_Width + ",height=" + pv_Height ;
+        window.open(ps_Link,ps_Win,ls_options);
+}
+
+function goOwnerSearch()
+{
+	document.ownerHorsePostForm.submit();
+}
+</script>
+<table width="492" border="0">
+        <tr>  
+          <td width="135"><font class=table_text>出生地 / 馬齡</font></td>
+          <td width="96"><font class=table_eng_text>: 
+
+           澳洲 / 3</font></td>
+          <td width="92"><font class=table_eng_text>練馬師</font></td>
+          <td width="151"><font class=table_eng_text>:
+	    <a href="TrainerWinStat.asp?trainercode=YTP">	 
+            &#23481;&#22825;&#40300;
+	    </a>	    
+	    </font>
+          </td>
+        </tr>
+        <tr> 
+          <td><font class=table_eng_text>毛色 / 性別</font></td>
+          <td><font class=table_eng_text>: 
+	    棗 / 閹</font></td>
+          <td><font class=table_eng_text>馬主</font></td>
+          <td><font class=table_eng_text>: </font><font class=table_text>
+		<!--a href=ownersearch.asp?horseowner=&#38283;&#24515;&#21916;&#24709;&#22296;&#39636;>&#38283;&#24515;&#21916;&#24709;&#22296;&#39636;</a-->
+		<a style=cursor:pointer onclick=goOwnerSearch();>開心喜悅團體</a>
+	        </font>
+           </td>
+        </tr>
+        <tr> 
+          <td><font class=table_eng_text>進口類別</font></td>
+          <td><font class=table_eng_text>: 
+            自購新馬</font></td>
+          <td><font class=table_eng_text>現時評分</font></td>
+          <td><font class=table_eng_text>: 
+            038</font></td>          
+        </tr>
+        <tr> 
+          <td><font class=table_eng_text>今季獎金*</font></td>
+          <td><font class=table_eng_text>: 
+            $96,600</font></td>
+          <td><font class=table_eng_text>季初評分</font></td>
+          <td><font class=table_eng_text>: 
+			49</font></td>
+        </tr>
+        <tr> 
+          <td><font class=table_eng_text>總獎金*</font></td>
+          <td><font class=table_eng_text>: 
+            $96,600</font></td>
+          <td><font class=table_eng_text>父系</font></td>
+          <td><font class=table_eng_text>: 
+		  
+			<a href="javascript:OpenPopWinScroll('http://racing.hkjc.com/racing/info/Horse/SameSire/chinese/Q2hvaXNpciAgICAgICAgICAgICA=',812,600)">Choisir             </a>
+		  	
+			</font></td>          
+        </tr>
+        <tr> 
+          <td nowrap><font class=table_eng_text>冠-亞-季-總出賽次數*</font></td>
+          <td><font class=table_eng_text>: 
+            0-0-1-8</font></td>
+          <td><font class=table_eng_text>母系</font></td>
+          <td><font class=table_eng_text>: 
+            Absolute Dream      </font></td>
+        </tr>
+        <tr> 
+          <td><font class=table_eng_text>最近十個賽馬日<BR>出賽場數</font></td>
+          <td><font class=table_eng_text>: 0
+          </font></td>
+          <td><font class=table_eng_text>外祖父</font></td>
+          <td><font class=table_eng_text>: 
+            Canny Lad           </font></td>
+        </tr>
+        <tr> 
+<td>&nbsp;</td><td>&nbsp;</td>
+          <td><font class=table_eng_text>同父系馬</font></td>
+          <td nowrap class=table_eng_text>: 
+          <select name="SIRE" class="table_small_text"><OPTION VALUE="V314 ">誰不羨</OPTION><OPTION VALUE="S312 ">豈等閒</OPTION><OPTION VALUE="T064 ">神威福將</OPTION><OPTION VALUE="A260 ">勇敢傳說</OPTION><OPTION VALUE="P355 ">精算率然</OPTION><OPTION VALUE="A298 ">森林之王</OPTION><OPTION VALUE="T080 ">旅英駿爵</OPTION><OPTION VALUE="A330 ">劍二十</OPTION><OPTION VALUE="S217 ">天才</OPTION><OPTION VALUE="P097 ">驍武</OPTION><OPTION VALUE="A075 ">贏馬神器</OPTION></select><a href="javascript: submit_form(document.SelHorse.SIRE.selectedIndex)"><img src="images/go.gif" border="0"></a>
+        </tr>
+        <tr>
+          
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<table width="1000" border="0">
+  <tr> 
+    <td width="639" class="table_text" align=left><b>馬匹所有往績紀錄 - &#30408;&#36914;</b>
+	</td>
+<!-- Q307 Modification !-->
+<td><table cellspacing=0 cellpadding=0 border=0 width=329 align=right><tr valign="bottom">
+
+        
+        <td><a href="horse.asp?HorseNo=V283&Option=3#htop">
+			<img src="../images/hf_3r_btn.jpg" name="Image12" width="111" height="24" border="0" id="Image12" onmouseover="MM_swapImage('Image12','','../images/hf_3r_btn_r.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td><td><a href="horse.asp?HorseNo=V283&Option=2#htop">
+			<img src="../images/hf_b3r_btn.jpg" name="Image22" width="107" height="24" border="0" id="Image22" onmouseover="MM_swapImage('Image22','','../images/hf_b3r_btn_r.jpg',1)" onmouseout="MM_swapImgRestore()" /></font></a></td><td>
+			<img src="../images/hf_allr_btn_o.jpg" name="Image32" width="111" height="24" border="0" id="Image32" /></td>
+        
+<!-------- End Q307 Modification ------->
+     </tr></table></td>
+  </tr>
+</table>
+
+
+<table border="0" cellspacing="1" cellpadding="1" class=bigborder width="1000">
+  <tr> 
+    <td width="50" class=hsubheader> 
+      <div align="center">場次</div>
+    </td>
+    <td width="50" class=hsubheader> 
+      <div align="center">名次</div>
+    </td>
+    <td width="80" class=hsubheader> 
+      <div align="center">日期</div>
+    </td>
+    <td width="70" class=hsubheader> 
+      <div align="center">馬場/跑道/<br>賽道</div>
+    </td>
+<!--<td width="80" class=subheader> 
+      <div align="center">賽道</div>
+    </td>
+-->    
+<!--<td width="60" class=subheader></td>-->
+    <td width="50" class=hsubheader> 
+      <div align="center"><font title=Distant>途程</font></div>
+    </td>
+    <td width="80" class=hsubheader> 
+      <div align="center">場地<br>狀況</div>
+    </td>
+    <td width="50" class=hsubheader> 
+      <div align="center">賽事<br>班次</div>
+    </td>
+    <td width="55" class=hsubheader> 
+      <div align="center">檔位</div>
+    </td>
+    <td width="55" class=hsubheader> 
+      <div align="center"><font title=Rating>評分</font></div>
+    </td>
+    <td width="100" class=hsubheader> 
+      <div align="center">練馬師</div>
+    </td>
+    <td width="100" class=hsubheader> 
+      <div align="center">騎師</div>
+    </td>    
+    <td width="75" class=hsubheader>頭馬<BR>距離</td>
+    <td width="60" class=hsubheader><font title=Weight>獨贏<br>賠率</font></td>
+    <td width="60" class=hsubheader><div align="center">實際<BR>負磅</div></td>    
+	<TD width="80" class=hsubheader>沿途<br>走位</td>
+    <td width="60" class=hsubheader><div align="center">完成<br>時間</div></td>
+	<!--ss01 -start-->
+    <td width="50" class=hsubheader><div align="center">排位<br>體重</div></td> 
+	<!--ss01 -end-->
+    <td width="80" class=hsubheader><div align="center">配備</div></td> 
+    <td width="60" class=hsubheader><div align="center">賽事<br>重播</div></td> 
+  </tr>
+  <TR height=18><TD colspan='20' bgcolor='#F1CD97' class='htable_bold_text' align='left'>&nbsp;<font class='htable_eng_bold_text'>16/17</font>&nbsp;馬季</TD></TR>
+
+  
+  <tr bgcolor="#F8F4EF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=14/12/2016&raceno=02&venue=HV" class=htable_eng_text>261</a></td>
+    <td class=htable_eng_text align=center><font  title="WV  ">WV  </font></td>
+    <td class=htable_eng_text align=center>14/12/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"C" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>谷&#33609;&#22320;"C" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1200</td>
+	
+    <td class=htable_text align=center>&#22909;/&#24555;</td>
+	
+    <td class=htable_text align=center>5      </td>
+    <td class=htable_eng_text align=center> 
+	
+		  --
+	    </td>
+    <td class=htable_eng_text align=center>038</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=LDE&season=Current" class=htable_text>&#26753;&#23478;&#20426;</a>
+		</td>
+		
+		<td class=htable_eng_text align=center>--</td>
+		<td class=htable_eng_text align=center>---</td>
+		
+		<td class=htable_eng_text align=center>130</td>
+			
+			<td class=htable_eng_text align=center>--</td>
+			<td class=htable_eng_text align=center>--</td>
+			<td class=htable_eng_text align=center>--</td>
+			<td class=htable_eng_text align=center>--</td>
+			<td class=htable_eng_text align=center>--</td>
+			
+  </tr>
+
+
+  
+  <tr bgcolor="#E7E4DF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=27/11/2016&raceno=02&venue=ST" class=htable_eng_text>213</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>10</font></td>
+    <td class=htable_eng_text align=center>27/11/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"C" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>田&#33609;&#22320;"C" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1400</td>
+	
+    <td class=htable_text align=center>&#22909;</td>
+	
+    <td class=htable_text align=center>5      </td>
+    <td class=htable_eng_text align=center> 
+	3    </td>
+    <td class=htable_eng_text align=center>040</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=CML&season=Current" class=htable_text>&#34081;&#26126;&#32057;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>4         </font></td>
+			
+					<td class=htable_eng_text align=center>9.5</td>
+				
+		<td class=htable_eng_text align=center>133</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>1</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;2</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;2</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;10</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>1.23.74</td>
+			<td class=htable_eng_text align=center>1182</td>
+			<td class=htable_eng_text align=center>TT</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161127/chi_20161127_race02_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=27/11/2016&race_no=2&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161127/chi_20161127_race02_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&27/11/2016&race_no=2&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20161127&no=02&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20161127&no=02&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=27/11/2016&race_no=2&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+
+
+  
+  <tr bgcolor="#F8F4EF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=06/11/2016&raceno=05&venue=ST" class=htable_eng_text>161</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>14</font></td>
+    <td class=htable_eng_text align=center>06/11/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"C+3" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>田&#33609;&#22320;"C+3" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1000</td>
+	
+    <td class=htable_text align=center>&#22909;/&#24555;</td>
+	
+    <td class=htable_text align=center>4      </td>
+    <td class=htable_eng_text align=center> 
+	5    </td>
+    <td class=htable_eng_text align=center>042</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=CML&season=Current" class=htable_text>&#34081;&#26126;&#32057;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>6-1/2     </font></td>
+			
+					<td class=htable_eng_text align=center>10</td>
+				
+		<td class=htable_eng_text align=center>117</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>11</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;14</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;14</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>0.58.21</td>
+			<td class=htable_eng_text align=center>1208</td>
+			<td class=htable_eng_text align=center>TT</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161106/chi_20161106_race05_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=06/11/2016&race_no=5&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161106/chi_20161106_race05_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&06/11/2016&race_no=5&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20161106&no=05&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20161106&no=05&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=06/11/2016&race_no=5&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+
+
+  
+  <tr bgcolor="#E7E4DF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=23/10/2016&raceno=02&venue=ST" class=htable_eng_text>122</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>09</font></td>
+    <td class=htable_eng_text align=center>23/10/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"A" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>田&#33609;&#22320;"A" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1200</td>
+	
+    <td class=htable_text align=center>&#22909;</td>
+	
+    <td class=htable_text align=center>4      </td>
+    <td class=htable_eng_text align=center> 
+	13    </td>
+    <td class=htable_eng_text align=center>044</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=HCY&season=Current" class=htable_text>&#20309;&#28580;&#22575;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>5-3/4     </font></td>
+			
+					<td class=htable_eng_text align=center>18</td>
+				
+		<td class=htable_eng_text align=center>116</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>2</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;2</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;9</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>1.10.50</td>
+			<td class=htable_eng_text align=center>1192</td>
+			<td class=htable_eng_text align=center>TT</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161023/chi_20161023_race02_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=23/10/2016&race_no=2&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161023/chi_20161023_race02_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&23/10/2016&race_no=2&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20161023&no=02&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20161023&no=02&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=23/10/2016&race_no=2&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+
+
+  
+  <tr bgcolor="#F8F4EF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=05/10/2016&raceno=02&venue=HV" class=htable_eng_text>077</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>08</font></td>
+    <td class=htable_eng_text align=center>05/10/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"A" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>谷&#33609;&#22320;"A" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1200</td>
+	
+    <td class=htable_text align=center>&#22909;</td>
+	
+    <td class=htable_text align=center>4      </td>
+    <td class=htable_eng_text align=center> 
+	12    </td>
+    <td class=htable_eng_text align=center>046</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=CML&season=Current" class=htable_text>&#34081;&#26126;&#32057;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>5-3/4     </font></td>
+			
+					<td class=htable_eng_text align=center>33</td>
+				
+		<td class=htable_eng_text align=center>119</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>2</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;2</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;8</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>1.11.73</td>
+			<td class=htable_eng_text align=center>1206</td>
+			<td class=htable_eng_text align=center>TT</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161005/chi_20161005_race02_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=05/10/2016&race_no=2&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20161005/chi_20161005_race02_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&05/10/2016&race_no=2&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20161005&no=02&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20161005&no=02&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=05/10/2016&race_no=2&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+
+
+  
+  <tr bgcolor="#E7E4DF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=18/09/2016&raceno=02&venue=ST" class=htable_eng_text>030</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>03</font></td>
+    <td class=htable_eng_text align=center>18/09/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"C+3" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>田&#33609;&#22320;"C+3" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1200</td>
+	
+    <td class=htable_text align=center>&#22909;/&#24555;</td>
+	
+    <td class=htable_text align=center>4      </td>
+    <td class=htable_eng_text align=center> 
+	9    </td>
+    <td class=htable_eng_text align=center>047</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=LDE&season=Current" class=htable_text>&#26753;&#23478;&#20426;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>5-1/2     </font></td>
+			
+					<td class=htable_eng_text align=center>46</td>
+				
+		<td class=htable_eng_text align=center>119</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>1</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;1</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;3</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>1.10.40</td>
+			<td class=htable_eng_text align=center>1199</td>
+			<td class=htable_eng_text align=center>TT</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160918/chi_20160918_race02_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=18/09/2016&race_no=2&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160918/chi_20160918_race02_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&18/09/2016&race_no=2&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20160918&no=02&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20160918&no=02&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=18/09/2016&race_no=2&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+
+
+  
+  <tr bgcolor="#F8F4EF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=03/09/2016&raceno=05&venue=ST" class=htable_eng_text>005</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>12</font></td>
+    <td class=htable_eng_text align=center>03/09/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"B" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>田&#33609;&#22320;"B" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1400</td>
+	
+    <td class=htable_text align=center>&#22909;</td>
+	
+    <td class=htable_text align=center>4      </td>
+    <td class=htable_eng_text align=center> 
+	11    </td>
+    <td class=htable_eng_text align=center>049</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=CAN&season=Current" class=htable_text>&#37101;&#33021;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>11-3/4    </font></td>
+			
+					<td class=htable_eng_text align=center>17</td>
+				
+		<td class=htable_eng_text align=center>122</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>2</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;3</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;4</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;12</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>1.24.05</td>
+			<td class=htable_eng_text align=center>1214</td>
+			<td class=htable_eng_text align=center>TT</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160903/chi_20160903_race05_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=03/09/2016&race_no=5&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160903/chi_20160903_race05_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&03/09/2016&race_no=5&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20160903&no=05&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20160903&no=05&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=03/09/2016&race_no=5&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+<TR height=18><TD colspan='20' bgcolor='#F1CD97' class='htable_bold_text' align='left'>&nbsp;<font class='htable_eng_bold_text'>15/16</font>&nbsp;馬季</TD></TR>
+
+  
+  <tr bgcolor="#F8F4EF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=01/07/2016&raceno=01&venue=ST" class=htable_eng_text>754</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>06</font></td>
+    <td class=htable_eng_text align=center>01/07/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"A+3" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>田&#33609;&#22320;"A+3" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1200</td>
+	
+    <td class=htable_text align=center>&#22909;/&#24555;</td>
+	
+    <td class=htable_text align=center>GRIFFIN</td>
+    <td class=htable_eng_text align=center> 
+	5    </td>
+    <td class=htable_eng_text align=center>--</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=NGA&season=Current" class=htable_text>&#21555;&#22025;&#26185;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>4-1/4     </font></td>
+			
+					<td class=htable_eng_text align=center>51</td>
+				
+		<td class=htable_eng_text align=center>112</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>4</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;3</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;6</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>1.10.02</td>
+			<td class=htable_eng_text align=center>1201</td>
+			<td class=htable_eng_text align=center>TT</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160701/chi_20160701_race01_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=01/07/2016&race_no=1&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160701/chi_20160701_race01_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&01/07/2016&race_no=1&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20160701&no=01&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20160701&no=01&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=01/07/2016&race_no=1&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+
+
+  
+  <tr bgcolor="#E7E4DF"> 
+    <td class=htable_text align=center><a href="results.asp?racedate=12/06/2016&raceno=01&venue=ST" class=htable_eng_text>706</a></td>
+    <td class=htable_eng_text align=center><font class=htable_eng_text>06</font></td>
+    <td class=htable_eng_text align=center>12/06/16</td>
+    
+<!--    
+    
+		<div align="center"><font face="Arial, Helvetica, sans-serif" size="2">"C" </font></div>
+    
+-->    
+    <td class=htable_text align=center nowrap>田&#33609;&#22320;"C" </td>
+<!--    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"></font></div>
+    </td>
+-->
+    <td class=htable_eng_text align=center>1000</td>
+	
+    <td class=htable_text align=center>&#40655;</td>
+	
+    <td class=htable_text align=center>GRIFFIN</td>
+    <td class=htable_eng_text align=center> 
+	10    </td>
+    <td class=htable_eng_text align=center>--</td>
+    <td class=htable_text align=center>
+	<a href="TrainerWinStat.asp?trainercode=CAS&season=Current" class=htable_text>&#21578;&#26481;&#23612;</a>
+	</td>
+    <td class=htable_text align=center>
+	<a href="JockeyProfile.asp?JockeyCode=CML&season=Current" class=htable_text>&#34081;&#26126;&#32057;</a>
+		</td>
+		
+				<td class=htable_eng_text align=center><font class=htable_eng_text>3-1/2     </font></td>
+			
+					<td class=htable_eng_text align=center>6.8</td>
+				
+		<td class=htable_eng_text align=center>117</td>
+			
+			<td class=htable_eng_text align=center><!---nobr><//% if (checknull(rst1("Position_1")) <> "--" and convertDate2YYYYMMDD (rst1("RACE_DATE")) >= convertDate2YYYYMMDD(Startdate2))  then response.write rst1("Position_1") & " " & rst1("Position_2") & " " & rst1("Position_3") & " " & rst1("Position_4") & " " & rst1("Position_5") & " " & rst1("Position_6") else response.write "--"  end if%></nobr--->
+				<font class=htable_eng_rpnarrow_text>6</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;8</font><font class=htable_eng_rpnarrow_text>&nbsp;&nbsp;6</font>	
+			
+			</td>
+			<td class=htable_eng_text align=center>0.57.14</td>
+			<td class=htable_eng_text align=center>1200</td>
+			<td class=htable_eng_text align=center>TT1</td>
+				
+				
+				<input id="url" name="url" type="hidden"/>
+					<td align="center"><table cellpadding=0 cellspacing=0><tr>
+					<!-- 20110304 Akamai player support : Remove 56k Url -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160612/chi_20160612_race01_57.asf';openvideo();" class="htable_text"><img src="./images/56k_film.gif" border=0 alt="56k"></a></td>-->
+					
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=12/06/2016&race_no=1&speed=57" class="htable_text">56k</a---></td>
+					<!--<td class="htable_text">　</td>-->
+					<!-- 20110304 Akamai player support : Change the url of broadband link -->
+					<!--<td><a href="javascript:document.getElementById('url').value='mms://wm.hkjc.pbase.net/extra1/replay/20160612/chi_20160612_race01_500.asf';openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" border=0 alt="寬頻"></a></td>-->
+					<!--<td><a href="javascript:document.getElementById('url').value='/racing/chinese/video/video.asp?lang=c&race_date=&12/06/2016&race_no=1&speed=500' ;openvideo();" class="htable_text"><img src="./images/broadband_horse.gif" target="_blank" border=0 alt="寬頻"></a>-->
+					<td>
+					    <a href="javascript:OpenPopWin('http://racing.hkjc.com/racing/video/play.asp?type=replay-full&date=20160612&no=01&lang=chi',640,390)" class="htable_text">
+						<img alt='賽事重溫' title='賽事重溫' src="./images/icon-multiangles.png" border=0>
+					    </a>
+					<a href='javascript:OpenPopWin("http://racing.hkjc.com/racing/video/aerial.aspx?date=20160612&no=01&lang=chi", 853, 480)' class='htable_text'><img alt='模擬鳥瞰重溫' title='模擬鳥瞰重溫' src='./images/icon-trakus-2.png' border=0></a>
+					</td>
+
+					<!--<td class="htable_text">　</td>-->
+					<td><!---a href="../replay/replay.asp?lang=c&race_date=12/06/2016&race_no=1&speed=500" class="htable_text">寬頻</a---></td>
+					</tr></table></td>
+				
+  </tr>
+
+  </table>
+
+
+<br class=commonspace>
+
+<br class=commonspace>
+</form>
+
+<!-- Modification for adding legend for the GEAR -->
+<font size="2">
+*包括本地及海外賽績及獎金<br/>
+備註:<br/>
+<table border="0" style="font-size:13px">
+<tr><td>1.&nbsp;&nbsp;&nbsp;</td><td><a href="#" onClick="MM_openBrWindow('../include/special_race_index.htm','','width=290,height=360')">賽事特別情況索引</a></td></tr>
+<tr><td>2.&nbsp;&nbsp;&nbsp;</td><td>模擬鳥瞰重溫由特約供應商 Trakus提供，供馬迷作個人娛樂資訊之用。但由於香港馬場內手機信號頻繁，因此Trakus系統有可能受干擾而令模擬鳥瞰重溫片段出現偏差。本會已盡一切努力務求有關資料盡可能準確，馬會就此並無責任。至於賽馬結果，馬迷應參考實際的賽馬片段為準。</td></tr>
+</table>
+</font>
+<br>
+<br class=commonspace>
+
+<br>
+<table width="605" border="1" cellspacing="1" cellpadding="0" bordercolor="#804000" align="left">
+  <tr>
+    <td width="599">
+      <table border = 0 cellspacing="4" cellpadding="3" width="592" align="center">
+        <tr> 
+          <td width = 30 bgcolor="#B9DCFF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">B 
+            :</font></td>
+          <td width = 150 bgcolor="#FFFFDD"><font face="細明體, 新細明體" size="2">戴眼罩</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">BO  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="細明體, 新細明體">只戴單邊眼罩</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">E  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="細明體, 新細明體">戴耳塞</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">H  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="細明體, 新細明體">戴頭罩</font></td>
+        </tr>
+        <tr> 
+          <td width = 30 bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">P  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="細明體, 新細明體">戴防沙眼罩</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">PC  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font face="細明體, 新細明體" size="2">戴半掩防沙眼罩</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">PS  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="細明體, 新細明體">戴單邊半掩防沙眼罩</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">SR  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font face="細明體, 新細明體" size="2">鼻箍 
+            </font></td>
+        </tr>
+        <tr> 
+          <td width = 30 bgcolor="#B9DCFF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">CP  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="細明體, 新細明體">羊毛面箍</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">TT  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="細明體, 新細明體">綁繫舌帶</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">V  
+            :</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font face="細明體, 新細明體" size="2">戴開縫眼罩</font></td>
+          <td width = 30 bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif">SB:</font></td>
+          <td  width = 150 bgcolor="#FFFFDD"><font size="2" face="新細明體">戴羊毛額箍 </font></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#B9DCFF" width="27"><font size="2" face="Arial, Helvetica, sans-serif">CO:</font></td>
+          <td bgcolor="#FFFFDD" width="98"><font size="2" face="新細明體">戴單邊羊毛面箍
+            </font></td>
+          <td bgcolor="#B9DCFF" width="34"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">"1"  
+            :</font></td>
+          <td bgcolor="#FFFFDD" width="70"><font size="2" face="細明體, 新細明體">首次</font></td>
+          <td bgcolor="#B9DCFF" width="32"><font face="Arial, Helvetica, sans-serif" size="2" color="#000000">"2"  
+            :</font></td>
+          <td bgcolor="#FFFFDD" width="75"><font size="2" face="細明體, 新細明體">重戴&nbsp;</font></td>
+          <td bgcolor="#B9DCFF" width="27"><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">"<font size="3">-</font>"&nbsp;:</font></td>
+          <td bgcolor="#FFFFDD" width="126"><font size="2" face="細明體, 新細明體">除去</font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif">CC:</font></td>
+          <td bgcolor="#FFFFDD"><font size="2" face="新細明體">喉托</font></td>
+          <td bgcolor="#B9DCFF"><font size="2" face="Arial, Helvetica, sans-serif">XB:</font></td>
+          <td bgcolor="#FFFFDD" height="25"><font size="2" face="新細明體">交叉鼻箍</font></td>
+          <td bgcolor="#B9DCFF">&nbsp;</td>
+          <td bgcolor="#FFFFDD">&nbsp;</td>
+          <td bgcolor="#B9DCFF">&nbsp;</td>
+          <td bgcolor="#FFFFDD">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<!-- Footer Begins -->
+<script language="JavaScript1.2">
+function mm_OpenContactUs() {
+	var tempwin2=window.open('http://special.hkjc.com/info/ch/contactus.asp','','scrollbars=yes,toolbar=no,resizable=yes,menubar=no,location=no,left=0,top=0,width=696,height=550');
+}
+function mm_OpenBettingRule() {
+	var tempwin2=window.open('/chinese/betting/betting_rule_ch.htm','','scrollbars=yes,toolbar=no,resizable=yes,menubar=no,location=no,left=0,top=0,width=685,height=550');
+}
+//-->
+</script>
+
+<script language="javascript">
+	document.write('<scr' + 'ipt type="text/javascript" language="javascript" src="/chinese/include/footer_all.js"></scr' + 'ipt>');
+</script>
+</td>
+</tr>
+</table>
+</BODY></HTML>
