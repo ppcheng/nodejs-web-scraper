@@ -1,8 +1,12 @@
+const Promise   = require('bluebird');
 const fs        = require('fs');
 const url       = require('url');
+const path      = require('path');
 const cheerio   = require('cheerio');
 
 const XlsWriter = require('./util/XlsWriter');
+
+Promise.promisifyAll(fs);
 
 function getHorseAttr(text, html) {
   const result = [];
@@ -21,7 +25,7 @@ function getHorseAttr(text, html) {
       console.log(`${temp[i].trim()}: ${valueArr[i].trim()}`);
     }
   } else {
-    result.push(value);
+    result.push(value.replace(',', ''));
     console.log(`${text}: ${value}`);
   }
 
@@ -32,12 +36,9 @@ function parseLink2Id(link) {
   return url.parse(link).pathname.split('/').slice(-1).pop();
 }
 
-fs.readFile(`${__dirname}/downloads/horses/html/A001.html`, (err, htmlString) => {
-  if (err) return console.error(err);
-
+async function HorseInfoParser(file) {
   const headers = [];
   const records = [];
-  const $       = cheerio.load(htmlString);
 
   const basicInfo = [
     '出生地 / 馬齡',
@@ -52,59 +53,81 @@ fs.readFile(`${__dirname}/downloads/horses/html/A001.html`, (err, htmlString) =>
     '最近十個賽馬日出賽場數'
   ];
 
-  const title = $('title').text().split('-')[0].trim();
-  records.push(['馬名', title]);
-  console.log(`馬名: ${title}`);
+  try {
+    const html = await fs.readFileAsync(file);
+    const $    = cheerio.load(html);
 
-  const horseId = parseLink2Id($('font:contains("賽績易")').parent().attr('href'));
-  records.push(['ID', horseId]);
-  console.log(`ID: ${horseId}`);
+    const title = $('title').text().split('-')[0].trim();
+    records.push(['馬名', title]);
+    console.log(`馬名: ${title}`);
 
-  records.push(['圖片', `www.hkjc.com/images/horse/${horseId}_s.jpg`]);
+    const horseId = parseLink2Id($('font:contains("賽績易")').parent().attr('href'));
+    records.push(['ID', horseId]);
+    console.log(`ID: ${horseId}`);
 
-  basicInfo.forEach((item) => {
-    const resp = getHorseAttr(item, $);
-    if (item.split('/').length > 1) {
-      item.split('/').forEach((val, index) => {
-        records.push([`${val.trim()}`, `${resp[index]}`]);
-      });
-    } else {
-      records.push([`${item}`, resp]);
-    }
-  });
+    records.push(['圖片', `www.hkjc.com/images/horse/${horseId}_s.jpg`]);
 
-  headers.push('烙號');
-  process.stdout.write('烙號 ');
-  $('tr > td[class="hsubheader"]').each((i, elem) => {
-    const value = $(elem).text().trim();
-    headers.push(value);
-    process.stdout.write(`${value} `);
-  });
-  process.stdout.write('\n');
-  records.push(headers);
-  $('tr[bgcolor="#F8F4EF"], tr[bgcolor="#E7E4DF"]').each((i, elem) => {
-    const numColumns = $(elem).children('td').length;
-
-    const row = [];
-
-    row.push(horseId);
-    process.stdout.write(`${horseId} `);
-    for (let index = 0; index < numColumns; index++) {
-      const line = $(elem).children('td').eq(index).text();
-      if (line !== '') {
-        row.push(line.trim());
-        process.stdout.write(`${line.trim()} `);
+    basicInfo.forEach((item) => {
+      const resp = getHorseAttr(item, $);
+      if (item.split('/').length > 1) {
+        item.split('/').forEach((val, index) => {
+          records.push([`${val.trim()}`, `${resp[index]}`]);
+        });
+      } else {
+        records.push([`${item}`, resp]);
       }
-    }
+    });
 
-    row[row.length - 8] = `'${row[row.length - 8]}'`;
-    records.push(row);
+    headers.push('烙號');
+    process.stdout.write('烙號 ');
 
+    $('tr > td[class="hsubheader"]').each((i, elem) => {
+      const value = $(elem).text().trim();
+      headers.push(value);
+      process.stdout.write(`${value} `);
+    });
     process.stdout.write('\n');
-  });
+    records.push(headers);
 
-  XlsWriter.save2csv([], records, `${__dirname}/data/csv/${horseId}.csv`);
+    $('tr[bgcolor="#F8F4EF"], tr[bgcolor="#E7E4DF"]').each((i, elem) => {
+      const numColumns = $(elem).children('td').length;
 
-  return 0;
-});
+      const row = [];
 
+      row.push(horseId);
+      process.stdout.write(`${horseId} `);
+      for (let index = 0; index < numColumns; index++) {
+        const line = $(elem).children('td').eq(index).text();
+        if (line !== '') {
+          row.push(line.trim());
+          process.stdout.write(`${line.trim()} `);
+        }
+      }
+
+      row[row.length - 8] = `'${row[row.length - 8]}'`;
+      records.push(row);
+
+      process.stdout.write('\n');
+    });
+
+    XlsWriter.save2csv([], records, `${__dirname}/data/csv/${horseId}.csv`);
+  } catch (err) {
+    console.error(err);
+  }
+  return true;
+}
+
+exports.HorseInfoParser = HorseInfoParser;
+
+(async function parseDataDir() {
+  const dir = `${__dirname}/downloads/horses/html/`;
+  try {
+    const files = await fs.readdirAsync(dir);
+
+    for (let i = 0; i < files.length; i++) {
+      console.log(await HorseInfoParser(dir + files[i]));
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}());
